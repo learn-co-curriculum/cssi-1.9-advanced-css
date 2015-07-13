@@ -17,7 +17,7 @@ Padding: The space between the content and the border. It shares the same backgr
 Border: The (possibly decorative) border around your element.
 Margin: The space around your element that you want to keep clear of the edges of other elements. It will not share the same background settings as the content.
 
-![box model diagram]()
+![box model diagram](http://www.washington.edu/accesscomputing/webd2/student/unit3/images/boxmodel.gif)
 
 By default, when you set width or height on your element, it refers to the width or height of the CONTENT BOX ONLY. You must account for extra width/height if you add any padding, border, and/or margin. If you would like for width and height to also include the padding, use box-sizing: padding-box;, and if you would like it to include both the padding and the border (but still not the margin), use box-sizing: border-box;. In the instructions below, we assume that box-sizing is content-box (the default described above).
 
@@ -150,7 +150,7 @@ div.green {
 }
 ```
 
-![Examples of three different display properties]()
+![Examples of three different display properties](http://4.bp.blogspot.com/-TiwOixlooJk/U4UyEnv_XpI/AAAAAAAACFs/NuuLz2IvoZ4/s1600/css-display-block-vs-inline-block.png)
 
 ##Float
 Elements have a property float, which can be set to left, right, or none. float is a property that should be used on block elements, and, in fact, if you set float on a non-block element, its display property will be over-written to become block (more details here). By default the float property is set to none.
@@ -176,7 +176,7 @@ section {
 }
 
 ```
-![Three examples of floats]()
+![Three examples of floats](https://lh4.googleusercontent.com/-P-MsEKlMZi4/UkLJQdWErkI/AAAAAAAAAYA/F93J7DKS0UQ/s642/CU01034D_1.png)
 Pro-tip: Using display: inline-block; is messy. Don’t use it. Instead, always use display: block; and float: left; (or right) in combination.
 
 ##Clear
@@ -201,7 +201,7 @@ section {
 ```
 Looks good, but what do we get?
 
-![Blue box in the top corner of orange box]()
+![Blue box in the top corner of orange box](http://i.imgur.com/2lCVfvO.png)
 
 Uh oh, we wanted the orange box below the blue box, not behind. It turns out that blocks that are floated take up no space in relation to elements that are not floated.
 
@@ -216,7 +216,7 @@ section {
 ```
 And we get:
 
-![Blue box on top of orange box]()
+![Blue box on top of orange box](http://i.imgur.com/wLhnXJl.png)
 
 Which is what we expected.
 
@@ -250,6 +250,7 @@ p {
 }
 ```
 The code looks great! But here’s what we get:
+![Smileyface text no  background](http://i.imgur.com/mqxHnTF.png)
 
 What happened to our pink background box? Well, it turns out that when you float an element, it no longer takes up space in its parent element. So in our example above, the `<section>` element collapsed to its minimum height, rendering only the border as a single orange line.
 How do we fix this? One option is to hard-code in a height for the `<section>`. This could be ok if we only ever use the `<section>` in this particular context, but what if the text or picture changes? Maybe for some people we want the text to be paragraphs and paragraphs long, and for others we want it to be only a few words. It would be much better if we could find a way for the `<section>` to take up exactly as much space as needed to wrap around its contents.
@@ -271,6 +272,8 @@ Now, just add the above to our CSS and change our HTML like so:
 </section>
 ```
 And voilá!
+![Smileyface text no  background](http://i.imgur.com/vc3ccGc.png)
+
 
 Just what we wanted.
 
@@ -307,6 +310,8 @@ div {
 }
 ```
 We get:
+![White box, green box](http://i.imgur.com/ThNKJBb.png)
+
 
 The green box normally would have ended up in the square border, but it has been placed 150px down from the top and 300px from the left. Also notice that, while we set a width for our `<section>`, we did not set a height. It maintains a height of 100px, though, because our 100px-high `<div>` is still taking up the space it would have in its parent element.
 This behavior is not something we usually want, so in most cases position: relative; should only be used in conjunction with position: absolute;, as described later.
@@ -332,6 +337,9 @@ div {
 }
 ```
 We get:
+
+![Blue box on text - absolute](http://i.imgur.com/DY1GNMQ.png)
+
 
 Notice that the block takes up no space in relation to the text, either where it currently is or where it would have been before we moved it with top, bottom, left, and/or right.  It has been placed 20px from the top and 150px from the right.
 
