@@ -76,7 +76,7 @@ div {
 }
 ```
 If the `<p>` were above the `<div>` (or vice-versa), the space between them would be max(50, 20) = 50px, but if <p> were to the left of `<div>`, the space between them would be 20 + 50 = 70px.
-Margin collapsing actually has more rules than this, but this is the most common case. Read more here.
+Margin collapsing actually has more rules than this, but this is the most common case.
 
 ##Sizing Borders
 Similar to padding and margin, border can be set using border-top, border-bottom, border-right, border-left and border. Unlike with padding and margin, though, we set the style and the color of the border in addition to its width.
@@ -135,8 +135,8 @@ As you may guess, an element with display: inline-block; shares some of its prop
 Here is some HTML and CSS for two elements. Below you can see an example of what happens with the elements when their display property is set to inline, block, and inline-block, respectively.
 ```
 <!-- HTML -->
-<div class=”red”>This is the first element.</div>
-<div class=”green”>This is the second element.</div>
+<div class="red">This is the first element.</div>
+<div class="green">This is the second element.</div>
 
 /* CSS */
 div.red {
@@ -160,11 +160,11 @@ Example:
 ```
 <!-- HTML -->
 <section>
-   <div style=”background: red”></div>
-   <div style=”background: green”></div>
-   <div style=”background: blue”></div>
-   <div style=”background: orange”></div>
-   <div style=”background: purple”></div>
+   <div style="background: red"></div>
+   <div style="background: green"></div>
+   <div style="background: blue"></div>
+   <div style="background: orange"></div>
+   <div style="background: purple"></div>
 </section>
 <!-- NOTE: In general, it’s bad practice to use the ‘style’ attribute; you should use CSS instead. We’re using it here for conciseness. -->
 
@@ -176,7 +176,7 @@ section {
 }
 
 ```
-![Three examples of floats](https://lh4.googleusercontent.com/-P-MsEKlMZi4/UkLJQdWErkI/AAAAAAAAAYA/F93J7DKS0UQ/s642/CU01034D_1.png)
+![Three examples of floats](https://lh4.googleusercontent.com/-P-MsEKlMZi4/UkLJQdWErkI/AAAAAAAAAYA/F93J7DKS0UQ/s642/CU01034D_1.png)  
 Pro-tip: Using display: inline-block; is messy. Don’t use it. Instead, always use display: block; and float: left; (or right) in combination.
 
 ##Clear
@@ -258,7 +258,7 @@ How do we fix this? One option is to hard-code in a height for the `<section>`. 
 The solution to this is called a “clearfix,” and to code it we need a very special block of CSS:
 ```
 .clearfix:after {
-  content: “”;
+  content: "";
   display: block;
   clear: both;
 }
@@ -267,7 +267,7 @@ What this is saying is that, for every element with class=”clearfix”, after 
 
 Now, just add the above to our CSS and change our HTML like so:
 ```
-<section class=”clearfix”>
+<section class="clearfix">
    …
 </section>
 ```
@@ -278,15 +278,15 @@ And voilá!
 Just what we wanted.
 
 ##Position
-The last major topic in display and positioning is the position property. position has four possible values: static, relative, absolute, and fixed. By default, all elements have position: static;.
+The last major topic in display and positioning is the position property. position has four possible values: static, relative, absolute, and fixed. By default, all elements have `position: static;`.
 ```
 position: static;
 ```
-All positioning we have talked about so far has assumed position was set to static. For position: static;, the display property can be set to things other than block, but the top, bottom, left, and right properties do not work.
+All positioning we have talked about so far has assumed position was set to static. For `position: static;`, the display property can be set to things other than block, but the top, bottom, left, and right properties do not work.
 ```
 position: relative;
 ```
-An element with position: relative; takes up space as you would expect in the normal flow of the page, but you can then move it using the top, bottom, left, and right properties, usually measured in pixels. It is moved relative to where it would have otherwise been on the page.
+An element with `position: relative;` takes up space as you would expect in the normal flow of the page, but you can then move it using the top, bottom, left, and right properties, usually measured in pixels. It is moved relative to where it would have otherwise been on the page.
 Example:
 ```
 <!-- HTML -->
@@ -314,11 +314,11 @@ We get:
 
 
 The green box normally would have ended up in the square border, but it has been placed 150px down from the top and 300px from the left. Also notice that, while we set a width for our `<section>`, we did not set a height. It maintains a height of 100px, though, because our 100px-high `<div>` is still taking up the space it would have in its parent element.
-This behavior is not something we usually want, so in most cases position: relative; should only be used in conjunction with position: absolute;, as described later.
+This behavior is not something we usually want, so in most cases `position: relative;` should only be used in conjunction with `position: absolute;`, as described later.
 ```
 position: absolute;
 ```
-An object with position: absolute; does not take up space in the normal flow of objects. Without any of the top, bottom, left, and right properties set it will appear in the top left corner of its nearest parent element with a position other than static. If all of its parent elements have position: static; (or no position set), it will appear in the top left corner of the window.
+An object with `position: absolute;` does not take up space in the normal flow of objects. Without any of the top, bottom, left, and right properties set it will appear in the top left corner of its nearest parent element with a position other than static. If all of its parent elements have `position: static;` (or no position set), it will appear in the top left corner of the window.
 
 Example:
 ```
@@ -343,10 +343,10 @@ We get:
 
 Notice that the block takes up no space in relation to the text, either where it currently is or where it would have been before we moved it with top, bottom, left, and/or right.  It has been placed 20px from the top and 150px from the right.
 
-Pro-tip: If you use position: absolute; on an element, always set position: relative; for the element’s parent. This will help prevent surprises with positioning in differently-sized windows and shouldn’t affect how the parent renders at all.
+Pro-tip: If you use `position: absolute;` on an element, always set `position: relative;` for the element’s parent. This will help prevent surprises with positioning in differently-sized windows and shouldn’t affect how the parent renders at all.
 ```
 position: fixed;
 ```
-An element with position: fixed; does not take up space in the normal flow of objects. It is very similar to position: absolute; except for one key feature: it will always stay in the exact same place in the window, even if you scroll in any direction. This makes it a popular choice for headers (and sometimes footers) if you want them to follow the user around the page.
+An element with `position: fixed;` does not take up space in the normal flow of objects. It is very similar to `position: absolute;` except for one key feature: it will always stay in the exact same place in the window, even if you scroll in any direction. This makes it a popular choice for headers (and sometimes footers) if you want them to follow the user around the page.
 
-Warning: position: fixed; is a dangerous feature. If you make a typo, or if the user’s window is configured differently than what you planned for, it is possible to make an element whose position is fixed appear off the screen originally. This means that, since it will always stay in the same place relative to the window, the user will never see it. Use position: fixed; only with care.
+Warning: `position: fixed;` is a dangerous feature. If you make a typo, or if the user’s window is configured differently than what you planned for, it is possible to make an element whose position is fixed appear off the screen originally. This means that, since it will always stay in the same place relative to the window, the user will never see it. Use `position: fixed;` only with care.
