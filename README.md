@@ -225,7 +225,7 @@ Here’s an example of a common CSS problem. We want to put, say, a picture and 
 ```
 <!-- HTML -->
 <section>
-  <div></div>
+  <div>:)</div>
   <p>Here is a lovely example of text.</p>
 </section>
 
