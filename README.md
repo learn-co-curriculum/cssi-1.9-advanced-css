@@ -1,9 +1,4 @@
----
-tags:
-level:
-languages:
-resources:
----
+
 
 # Cssi 1.9 Advanced CSS
 You've seen how to select and style individual CSS elements. Now, we'll look at how to size and position elements on the page.
