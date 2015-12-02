@@ -345,3 +345,5 @@ position: fixed;
 An element with `position: fixed;` does not take up space in the normal flow of objects. It is very similar to `position: absolute;` except for one key feature: it will always stay in the exact same place in the window, even if you scroll in any direction. This makes it a popular choice for headers (and sometimes footers) if you want them to follow the user around the page.
 
 Warning: `position: fixed;` is a dangerous feature. If you make a typo, or if the user’s window is configured differently than what you planned for, it is possible to make an element whose position is fixed appear off the screen originally. This means that, since it will always stay in the same place relative to the window, the user will never see it. Use `position: fixed;` only with care.
+
+<a href='https://learn.co/lessons/cssi-1.9-advanced-css' data-visibility='hidden'>View this lesson on Learn.co</a>
