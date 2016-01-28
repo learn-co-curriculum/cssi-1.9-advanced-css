@@ -346,4 +346,4 @@ An element with `position: fixed;` does not take up space in the normal flow of 
 
 Warning: `position: fixed;` is a dangerous feature. If you make a typo, or if the user’s window is configured differently than what you planned for, it is possible to make an element whose position is fixed appear off the screen originally. This means that, since it will always stay in the same place relative to the window, the user will never see it. Use `position: fixed;` only with care.
 
-<a href='https://learn.co/lessons/cssi-1.9-advanced-css' data-visibility='hidden'>View this lesson on Learn.co</a>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/cssi-1.9-advanced-css' title='Cssi 1.9 Advanced CSS'>Cssi 1.9 Advanced CSS</a> on Learn.co and start learning to code for free.</p>
